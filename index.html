@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhinesh's Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Dhinesh's Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="download" class = "download">
+        <a href="86.pdf" class="download-btn" download>Download Resume</a>
+    </section>
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm Dhinesh</h1>
+            <p>A Passionate Software Developer</p>
+        <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <h2>About Me</h2>
+        <p>I'm a  software developer with a strong passion for creating innovative solutions. With experience in AI, web development, and voice-responsive platforms, I bring a unique blend of creativity and technical expertise to every project.</p>
+    </section>
+
+    <section id="skills" class="section skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">Java & springboot</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">Python</div>
+            <div class="skill">SQL & MongoDB</div>
+            <div class="skill">React</div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects">
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <h3>Artificial Intelligence Assitant Jarvis</h3>
+                <p>It is a personalized AI assitant which is controlled through commands.</p>
+                <a href="https://github.com/Dhinesh2408/jarvis" class="view-project-btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Baby Monitor Using ASR Software</h3>
+                <p>It is a Speech recognition software which is used to monitor the infant's.</p>
+                <a href="baby monitor report.pdf" class="view-project-btn">View Project</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+
+    <section id="experience" class="section experience">
+        <h2>Experience</h2>
+        <div class="experience-container">
+            <div class="experience-item">
+                <h3>Software Job Stimulation Intern</h3>
+                <p>JP Morgan Chase's & co | Nov 2023</p>
+                <p>Resolved repository issues by fixing 50+ broken files, ensuring the web application rendered output correctly and improving 
+                    functionality by 25%.
+                    Utilized JPMorgan Chase’s open-source library, Perspective, to generate a live graph that displayed real-time data feeds, 
+                    enhancing data clarity by 30%</p>
+            </div>
+            <div class="experience-item">
+                <h3>Data Analytics And Visualization Intern</h3>
+                <p>Accenture North America | Aug 2024</p>
+                <p>Executed a simulation focused on advising a hypothetical social media client as a Data Analyst at Accenture.
+                    Cleaned, modelled, and analysed 7 datasets to uncover insights into content trends to inform strategic decisions.
+                    Crafted a PowerPoint deck and video presentation to communicate key insights for the client and internal stakeholder.</p>
+            </div>
+            <!-- Add more experiences as needed -->
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm" action="https://formspree.io/f/xeojyygb" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+           
+            <button class="button">
+            <span class="text">send message</span>
+            <span class="icon"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-icon="paper-plane" width="20px" aria-hidden="true"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z" fill="currentColor"></path></svg></span>
+            </button>
+        </form>
+        <div class="success-message" id="successMessage">Your message has been sent successfully!</div>
+    </section>    
+    <footer>
+        <p>&copy; 2024 Dhinesh AD. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

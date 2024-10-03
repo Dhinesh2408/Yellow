@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #ffffff; /* Clean white background */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #2c3e50; /* Dark navy blue */
+    color: #ecf0f1; /* Light gray for text */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    background: #34495e; /* Slightly darker blue on hover */
+    border-radius: 5px;
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, #2980b9, #6dd5ed); /* Cool gradient */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Slightly larger font */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+.hero p {
+    font-size: 1.3rem; /* Larger description text */
+    margin-bottom: 20px;
+}
+/* Fade in animation keyframes */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* From Uiverse.io by roroland */ 
+.btn {
+  --fs: 1.25em;
+  --col1: #FFFFFF; /* Text color */
+  --col2: #87CEFA; /* Soft shadow */
+  --col3: #007BFF; /* Button background */
+  --col4: #003366; /* Border color */
+  --pd: .5em .65em;
+  display: grid;
+  align-content: baseline;
+  appearance: none;
+  border: 0;
+  grid-template-columns: min-content 1fr;
+  padding: var(--pd);
+  font-size: var(--fs);
+  color: var(--col1);
+  background-color: var(--col3);
+  border-radius: 8px;
+  text-shadow: 1px 1px var(--col4);
+  box-shadow: inset -2px 1px 1px var(--col2),
+              inset 2px 1px 1px var(--col2);
+  position: relative;
+  transition: all .4s ease-out;
+  transform-origin: center;
+}
+
+.btn:hover {
+  color: var(--col1);
+  background-color: #0056b3; /* Darker blue on hover */
+  box-shadow: inset -2px 1px 1px var(--col2),
+              inset 2px 1px 1px var(--col2),
+              inset 0px -2px 15px var(--col4),
+              0px 15px 20px var(--col3),
+              0px -15px 20px var(--col2),
+              1px 2px 15px var(--col4);
+  text-shadow: 1px 1px #FFB6C1; /* Soft pink on hover */
+}
+
+.btn:active {
+  animation: offset 1s ease-in-out infinite;
+  outline: 2px solid var(--col2);
+  outline-offset: 0;
+}
+
+.btn::after,
+.btn::before {
+  content: '';
+  align-self: center;
+  justify-self: center;
+  height: .5em;
+  margin: 0 .5em;
+  grid-column: 1;
+  grid-row: 1;
+  opacity: 1;
+}
+
+.btn::after {
+  position: relative;
+  border: 2px solid var(--col4);
+  border-radius: 50%;
+  transition: all .5s ease-out;
+  height: .1em;
+  width: .1em;
+}
+
+.btn:hover::after {
+  border: 2px solid var(--col3);
+  transform: rotate(-120deg) translate(10%, 140%);
+}
+
+.btn::before {
+  border-radius: 50% 0%;
+  border: 4px solid var(--col4);
+  box-shadow: inset 1px 1px var(--col2);
+  transition: all 1s ease-out;
+  transform: rotate(45deg);
+  height: .45em;
+  width: .45em;
+}
+
+.btn:hover::before {
+  border-radius: 50%;
+  border: 4px solid var(--col1);
+  transform: scale(1.25) rotate(0deg);
+  animation: blink 1.5s ease-out 1s infinite alternate;
+}
+
+.btn:hover > span {
+  filter: contrast(150%);
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1, 1) skewX(0deg);
+    opacity: 1;
+  }
+
+  5% {
+    transform: scale(1.5, .1) skewX(10deg);
+    opacity: .5;
+  }
+
+  10%,
+  35% {
+    transform: scale(1, 1) skewX(0deg);
+    opacity: 1;
+  }
+
+  40% {
+    transform: scale(1.5, .1) skewX(10deg);
+    opacity: .25;
+  }
+
+  45%,
+  100% {
+    transform: scale(1, 1) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes offset {
+  50% {
+    outline-offset: .15em;
+    outline-color: var(--col1);
+  }
+
+  55% {
+    outline-offset: .1em;
+    transform: translateY(1px);
+  }
+
+  80%,
+  100% {
+    outline-offset: 0;
+  }
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #2c3e50; /* Dark navy for section headings */
+}
+
+.about p {
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.8; /* Increased line height for readability */
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill {
+    background: #27ae60; /* Soft green */
+    color: #fff;
+    padding: 12px 20px; /* Slightly larger padding */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.projects .project-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background: #ecf0f1; /* Light gray for cards */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Slightly larger border radius for softer corners */
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for more depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scale and shadow transition */
+    position: relative; /* Relative positioning for pseudo-elements */
+    overflow: hidden; /* Prevents overflow of child elements */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #2980b9; /* Cool blue for project titles */
+    font-size: 1.5rem; /* Slightly larger font for titles */
+}
+
+.project-card p {
+    color: #555; /* Dark gray for project descriptions */
+    font-size: 0.9rem; /* Smaller font for descriptions */
+    margin-bottom: 15px; /* Margin for spacing */
+}
+
+.view-project-btn {
+  --fs: 1.1em;
+  --col1: #FFFFFF; /* Text color */
+  --col2: #B0C4DE; /* Soft shadow color */
+  --col3: #008080; /* Button background */
+  --col4: #006666; /* Hover background */
+  --pd: .6em 1.2em;
+  display: inline-block;
+  appearance: none;
+  text-decoration: none;
+  padding: var(--pd);
+  font-size: var(--fs);
+  color: var(--col1);
+  background-color: var(--col3);
+  border-radius: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.4s ease, transform 0.2s ease;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(176, 196, 222, 0.5);
+}
+
+.view-project-btn:hover {
+  background-color: var(--col4);
+  color: var(--col1);
+  box-shadow: 0 8px 20px rgba(0, 102, 102, 0.3);
+  transform: translateY(-3px);
+}
+
+.view-project-btn:active {
+  background-color: #66B2B2; /* Light teal */
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(0, 102, 102, 0.2);
+  animation: pulse 0.6s infinite alternate; /* Add pulse animation */
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.experience-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.experience-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.contact button {
+    background: #2980b9; /* Cool blue for buttons */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+.contact button:hover {
+    background: #1f618d; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+/* Animation for success message */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.success-message {
+    display: none; /* Hidden by default */
+    background: #27ae60; /* Soft green for success */
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    animation: fadeOut 3s forwards; /* Fade out animation */
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+/* From Uiverse.io by Carlos-vargs */ 
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    border-radius: 36px;
+    font-weight: 700;
+    height: 54px;
+    font-size: 16px;
+    padding-inline: 20px;
+    background-color: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-align: center;
+    transition: all .25s ease-in-out;
+    z-index: 1;
+    border: none;
+  }
+  
+  .button:is(:hover, :focus)::before {
+    transform: translateX(0%);
+  }
+  
+  .text {
+    white-space: nowrap;
+    line-height: 1.2;
+    padding-inline-end: 44px;
+    z-index: 2;
+  }
+  
+  /* change the width and height to 100% when you use it in your layout */
+  .button::after {
+    content: '';
+    position: absolute;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border: 1px solid #FFB400;
+    border-radius: 36px;
+    z-index: 2;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #FFB400;
+    z-index: 1;
+    left: -2px;
+    transform: translateX(90%);
+    transition: all .3s ease-out;
+  }
+  
+  .icon {
+    display: inherit;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 54px;
+    height: 54px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #FFB400;
+    z-index: 2;
+  }  
+footer {
+    background: #34495e; /* Charcoal Gray */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.download-btn {
+  position: absolute; /* Use absolute positioning to place it relative to the nearest positioned ancestor */
+  top: 15%; /* Center vertically in the hero section */
+  right: 20px; /* Distance from the right side */
+  transform: translateY(-50%); /* Center it vertically */
+  background: linear-gradient(135deg, #ff6f61, #ff8a5c); /* Attractive gradient */
+  color: #fff;
+  padding: 10px 20px; /* Padding for a decent button size */
+  border: none;
+  border-radius: 25px; /* Rounded edges */
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #ff8a5c, #ff6f61); /* Reverse gradient on hover */
+  transform: translateY(-50%) translateY(-3px); /* Lift effect on hover */
+}
+
+.download-btn:active {
+  transform: translateY(-50%) scale(0.95); /* Slight shrink effect on click */
+}
