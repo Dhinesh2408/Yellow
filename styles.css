@@ -12,8 +12,8 @@ body {
 }
 
 header {
-    background: #2c3e50; /* Dark navy blue */
-    color: #ecf0f1; /* Light gray for text */
+    background-color: #004D4D;
+    color: white; 
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -49,16 +49,31 @@ nav {
 }
 
 .hero {
+    width: 100%;
     height: 100vh;
-    background: linear-gradient(to right, #2980b9, #6dd5ed); /* Cool gradient */
+    /*background: linear-gradient(135deg, rgba(160, 216, 208, 0.8) 0%, rgba(92, 157, 173, 0.8) 50%, rgba(0, 123, 95, 0.8) 100%);*/
     color: #fff;
+    background-image: url(background.png);
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 50;
+    overflow: hidden;
+    position: relative;
+    background-position: center;
 }
 
+/*.hero{
+  width: 100%;
+  height: 100vh;
+  background-image: url(background.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}*/
 .hero h1 {
     font-size: 3.5rem; /* Slightly larger font */
     margin-bottom: 10px;
@@ -87,7 +102,6 @@ nav {
   --col1: #FFFFFF; /* Text color */
   --col2: #87CEFA; /* Soft shadow */
   --col3: #007BFF; /* Button background */
-  --col4: #003366; /* Border color */
   --pd: .5em .65em;
   display: grid;
   align-content: baseline;
@@ -99,7 +113,6 @@ nav {
   color: var(--col1);
   background-color: var(--col3);
   border-radius: 8px;
-  text-shadow: 1px 1px var(--col4);
   box-shadow: inset -2px 1px 1px var(--col2),
               inset 2px 1px 1px var(--col2);
   position: relative;
@@ -116,7 +129,6 @@ nav {
               0px 15px 20px var(--col3),
               0px -15px 20px var(--col2),
               1px 2px 15px var(--col4);
-  text-shadow: 1px 1px #FFB6C1; /* Soft pink on hover */
 }
 
 .btn:active {
@@ -217,6 +229,10 @@ nav {
     outline-offset: 0;
   }
 }
+a:-webkit-any-link {
+  cursor: pointer;
+  text-decoration: none;
+}
 
 .section {
     padding: 60px 20px;
@@ -226,7 +242,14 @@ nav {
 .section h2 {
     margin-bottom: 20px;
     font-size: 2.5rem;
-    color: #2c3e50; /* Dark navy for section headings */
+    /*color: #2c3e50;*/ /* Dark navy for section headings */
+    color: #008C8C;
+    /*color:orange*/
+}
+@media (prefers-color-scheme: dark) {
+  h2, h3, h4 {
+      color: #66B2B2; /* Lighter variant for dark mode */
+  }
 }
 
 .about p {
@@ -236,18 +259,45 @@ nav {
 }
 
 .skills-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between skill items */
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between skill items */
 }
 
 .skill {
-    background: #27ae60; /* Soft green */
-    color: #fff;
-    padding: 12px 20px; /* Slightly larger padding */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background: #B2E0D4; /* Soft pastel teal for skill boxes */
+  color: #333333; /* Dark gray for text */
+  padding: 12px 20px; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  display: flex; 
+  align-items: center; 
+  transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+.skill:hover {
+  background: #009688; /* Darker teal on hover */
+  cursor: pointer; 
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .skill {
+    padding: 10px 15px; /* Adjust padding for mobile */
+    font-size: 14px; /* Slightly smaller font size */
+  }
+
+  .skill i {
+    font-size: 20px; /* Adjust icon size for mobile */
+  }
 }
 
 .projects .project-cards {
@@ -349,6 +399,20 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.achievements-container {
+  max-width: 800px;
+  margin:0 auto;
+  text-align: left;
+}
+
+.achievements-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .contact form {
     max-width: 600px;
     margin: 0 auto;
@@ -364,20 +428,6 @@ nav {
     border: 1px solid #ddd;
 }
 
-.contact button {
-    background: #2980b9; /* Cool blue for buttons */
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s; /* Added transform transition */
-}
-
-.contact button:hover {
-    background: #1f618d; /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect */
-}
 /* Animation for success message */
 @keyframes fadeOut {
     0% {
@@ -414,7 +464,7 @@ nav {
     font-size: 16px;
     padding-inline: 20px;
     background-color: transparent;
-    color: #fff;
+    color: black;
     text-transform: uppercase;
     overflow: hidden;
     text-align: center;
@@ -422,7 +472,6 @@ nav {
     z-index: 1;
     border: none;
   }
-  
   .button:is(:hover, :focus)::before {
     transform: translateX(0%);
   }
@@ -435,7 +484,7 @@ nav {
   }
   
   /* change the width and height to 100% when you use it in your layout */
-  .button::after {
+  /*.button::after {
     content: '';
     position: absolute;
     height: calc(100% - 2px);
@@ -470,16 +519,178 @@ nav {
     border-radius: 100%;
     background-color: #FFB400;
     z-index: 2;
-  }  
-footer {
-    background: #34495e; /* Charcoal Gray */
-    color: #ecf0f1;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
+  }  */
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     width: 100%;
-    bottom: 0;
+    border-radius: 36px;
+    font-weight: 700;
+    height: 54px;  /* Default height */
+    font-size: 16px;  /* Default font size */
+    padding-inline: 20px;
+    background-color: transparent;
+    color: black;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-align: center;
+    transition: all .25s ease-in-out;
+    z-index: 1;
+    border: none;
 }
+
+.button:is(:hover, :focus)::before {
+    transform: translateX(0%);
+}
+
+.text {
+    white-space: nowrap;
+    line-height: 1.2;
+    padding-inline-end: 44px;  /* Space for icon */
+    z-index: 2;
+}
+
+/* Outline effect */
+.button::after {
+    content: '';
+    position: absolute;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border: 1px solid #FFB400;  /* Outline color */
+    border-radius: 36px;
+    z-index: 2;
+}
+
+/* Background effect on hover */
+.button::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #FFB400;  /* Button background color */
+    z-index: 1;
+    left: -2px;
+    transform: translateX(90%);
+    transition: all .3s ease-out;
+}
+
+/* Icon styles */
+.icon {
+    display: inherit;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 54px;  /* Default icon size */
+    height: 54px;  /* Default icon size */
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;  /* Circular icon */
+    background-color: #FFB400;  /* Icon background color */
+    z-index: 2;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    .button {
+        height: 48px;  /* Smaller height */
+        font-size: 14px;  /* Smaller font size */
+        padding-inline: 15px;  /* Smaller padding */
+    }
+
+    .icon {
+        width: 44px;  /* Smaller icon size */
+        height: 44px;  /* Smaller icon size */
+    }
+
+    .text {
+        padding-inline-end: 36px;  /* Adjust padding for smaller text */
+    }
+}
+footer {
+  background: #34495e; /* Dark background */
+  color: #ecf0f1; /* Light text color */
+  text-align: center;
+  padding: 10px 0; /* Vertical padding */
+  position: relative; /* Ensure footer is positioned properly */
+  width: 100%; /* Full width of the screen */
+  bottom: 0; /* Place it at the bottom */
+  font-size: 16px; /* Font size for the text */
+  z-index: 10; /* Keeps the footer above other elements if necessary */
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info h3 {
+  margin-bottom: 10px;
+  color: #f1f1f1; /* Light heading color */
+}
+
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin: 8px 0;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #a6c9f7; /* Light blue for links to contrast with dark footer background */
+  display: flex;
+  align-items: center;
+  justify-content:center; /* Center align links in the footer */
+}
+
+.contact-info img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.contact-info a:hover {
+  color: #FFB400; /* Change link color on hover to a bright yellow */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .contact-info h3 {
+      font-size: 1.2em;
+  }
+
+  .contact-info ul {
+      flex-direction: column;
+  }
+
+  .contact-info li {
+      justify-content: center;
+  }
+
+  .contact-info a {
+      font-size: 14px;
+      text-align: center;
+  }
+
+  .contact-info img {
+      width: 20px;
+      height: 20px;
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  footer {
+      padding: 8px 0; /* Slightly smaller padding */
+      font-size: 14px; /* Smaller font size for mobile */
+  }
+}
+
 .download-btn {
   position: absolute; /* Use absolute positioning to place it relative to the nearest positioned ancestor */
   top: 15%; /* Center vertically in the hero section */
@@ -504,4 +715,319 @@ footer {
 
 .download-btn:active {
   transform: translateY(-50%) scale(0.95); /* Slight shrink effect on click */
+}
+
+/* For devices larger than 768px (tablets and larger) */
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 2.5rem; /* Smaller font for tablets */
+  }
+  .hero p {
+      font-size: 1rem;
+  }
+  .nav-links {
+      flex-direction: column;
+      gap: 10px;
+  }
+  .nav-links a {
+      padding: 5px 10px;
+  }
+}
+
+/* For devices smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+  .hero {
+      padding: 0 10px;
+  }
+  .hero h1 {
+      font-size: 2rem; /* Even smaller font for mobile */
+  }
+  .hero p {
+      font-size: 0.9rem;
+  }
+  .section h2 {
+      font-size: 2rem;
+  }
+  .projects .project-cards {
+      flex-direction: column; /* Stack project cards on small screens */
+  }
+  .contact form {
+      width: 100%; /* Full width form on mobile */
+  }
+  header nav {
+      flex-direction:column; /* Stack nav links */
+  }
+  footer {
+      padding: 15px 0;
+  }
+}
+
+/* General styles for the header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position:fixed;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Styling for the navigation links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.5px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none; /* Hide the links in mobile view */
+      position: absolute;
+      top: 60px; /* Below the header */
+      right: 0;
+      background: gray;
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+      z-index: 10; /* Ensure the nav is above other content */
+  }
+
+  .nav-links.show {
+      display: flex; /* Show the links when toggled */
+  }
+
+  .nav-links li {
+      width: 100%;
+      text-align:center;
+      padding: 10px 0;
+  }
+
+  /* Show hamburger menu on smaller screens */
+  .hamburger {
+      display: flex; /* Show hamburger menu */
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  #download {
+      text-align: center;
+      padding: 20px;
+      margin-top: 18px;
+  }
+
+  .download-btn {
+      padding: 10px 15px;
+      margin-top: 20px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 200px; /* Limit maximum width */
+  }
+}
+/* From Uiverse.io by andrew-demchenk0 */ 
+.switch {
+  font-size: 14px; /* Reduced font size */
+  position: relative;
+  display: inline-block;
+  width: 48px; /* Reduced width */
+  height: 24px; /* Reduced height */
+  margin-left: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 20px; /* Adjusted for smaller size */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; /* Reduced circle height */
+  width: 20px; /* Reduced circle width */
+  border-radius: 50%; /* Kept circle shape */
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 4px; /* Adjusted for smaller size */
+  left: 28px; /* Adjusted for smaller size */
+  z-index: 1;
+  width: 16px; /* Reduced sun icon size */
+  height: 16px; /* Reduced sun icon size */
+}
+
+.moon svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 3px; /* Adjusted for smaller size */
+  left: 4px; /* Adjusted for smaller size */
+  z-index: 1;
+  width: 16px; /* Reduced moon icon size */
+  height: 16px; /* Reduced moon icon size */
+}
+
+.sun svg:hover {
+  animation: rotate 15s linear infinite;
+}
+
+.moon svg:hover {
+  animation: tilt 5s linear infinite;
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(24px); /* Adjusted for smaller size */
+}
+
+/* Responsive styles for even smaller screens */
+@media (max-width: 600px) {
+  .switch {
+      width: 40px; /* Further reduced width for mobile */
+      height: 20px; /* Further reduced height for mobile */
+      margin-left: 20px;
+  }
+
+  .slider:before {
+      height: 18px; /* Further reduced circle height for mobile */
+      width: 18px; /* Further reduced circle width for mobile */
+      left: 2px;
+      bottom: 2px;
+  }
+
+  .input:checked + .slider:before {
+      transform: translateX(18px); /* Adjusted for mobile */
+  }
+
+  .sun svg {
+      width: 14px; /* Further reduced sun icon size */
+      height: 14px; /* Further reduced sun icon size */
+      top: 3px;
+      left: 24px;
+  }
+
+  .moon svg {
+      width: 14px; /* Further reduced moon icon size */
+      height: 14px; /* Further reduced moon icon size */
+      top: 3px;
+      left: 4px;
+  }
+}
+
+.bubbles img{
+  width: 50px;
+  animation: bubble 7s linear infinite;
+}
+.bubbles{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: -70px;
+}
+
+@keyframes bubble{
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  70%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+}
+
+.bubbles img:nth-child(1){
+  animation-delay: 2s;
+  width: 25px;
+}
+.bubbles img:nth-child(2){
+  animation-delay: 1s;
+}
+.bubbles img:nth-child(3){
+  animation-delay: 3s;
+  width: 25px;
+}
+.bubbles img:nth-child(4){
+  animation-delay: 4.5s;
+}
+.bubbles img:nth-child(5){
+  animation-delay: 3s;
+}
+.bubbles img:nth-child(6){
+  animation-delay: 3.5s;
+  width: 20px;
+}
+.bubbles img:nth-child(7){
+  animation-delay: 5s;
+  width: 30px;
 }

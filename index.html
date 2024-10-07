@@ -5,21 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhinesh's Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link id="themeStylesheet" rel="stylesheet" href="light-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Dhinesh's Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="download" class = "download">
+          <div class="logo">Dhinesh's Portfolio</div>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>     
+        <label class="switch">
+        <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
+        <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
+        <input type="checkbox" class="input">
+        <span class="slider"></span>
+        </label>        
+    </header>           
+    <section id="download" class="download">
         <a href="86.pdf" class="download-btn" download>Download Resume</a>
     </section>
     <section id="hero" class="hero">
@@ -28,24 +42,53 @@
             <p>A Passionate Software Developer</p>
         <a href="#projects" class="btn">View My Work</a>
         </div>
+        <div class="bubbles">
+            <img src="bubble.png">
+            <img src="bubble.png">
+            <img src="bubble.png">
+            <img src="bubble.png">
+            <img src="bubble.png">
+            <img src="bubble.png">
+            <img src="bubble.png">
+        </div>
     </section>
 
     <section id="about" class="section about">
-        <h2>About Me</h2>
-        <p>I'm a  software developer with a strong passion for creating innovative solutions. With experience in AI, web development, and voice-responsive platforms, I bring a unique blend of creativity and technical expertise to every project.</p>
-    </section>
+        <!--add img to display in the aboutme section-->
+          <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+              I'm a software developer with a strong passion for creating innovative solutions. With experience in AI, web development, and voice-responsive platforms, I bring a unique blend of creativity and technical expertise to every project.
+            </p>
+          </div>
+    </section>      
 
     <section id="skills" class="section skills">
         <h2>Skills</h2>
         <div class="skills-container">
-            <div class="skill">Java & springboot</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">HTML & CSS</div>
-            <div class="skill">Python</div>
-            <div class="skill">SQL & MongoDB</div>
-            <div class="skill">React</div>
+          <div class="skill">
+            <i class="fab fa-java"></i> Java
+          </div>
+          <div class="skill">
+            <i class="fab fa-js"></i> JavaScript
+          </div>
+          <div class="skill">
+            <i class="fab fa-html5"></i> HTML & CSS
+          </div>
+          <div class="skill">
+            <i class="fab fa-python"></i> Python
+          </div>
+          <div class="skill">
+            <i class="fas fa-database"></i> SQL & MongoDB
+          </div>
+          <div class="skill">
+            <i class="fab fa-react"></i> React
+          </div>
+          <div class="skill">
+            <i class="fas fa-code"></i> Eclipse & Springboot
+          </div>
         </div>
-    </section>
+      </section>      
 
     <section id="projects" class="section projects">
         <h2>Projects</h2>
@@ -86,21 +129,67 @@
         </div>
     </section>
 
-    <section id="contact" class="section contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm" action="https://formspree.io/f/xeojyygb" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-           
-            <button class="button">
-            <span class="text">send message</span>
-            <span class="icon"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-icon="paper-plane" width="20px" aria-hidden="true"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z" fill="currentColor"></path></svg></span>
-            </button>
-        </form>
-        <div class="success-message" id="successMessage">Your message has been sent successfully!</div>
-    </section>    
-    <footer>
+    <section id="achievements" class="section achievements">
+        <h2>Achievements</h2>
+        <div class="achievements-container">
+            <div class="achievements-item">
+                <h3>Participated in KAVACH-23</h3>
+                <p>KAVACH-23 Participant | Nov 2023</p>
+                <p>Create a solution for the ground personnels on-duty.As a team we analyze the problem statement and made a better solutions.
+                    In this project, we use a GSM module, GPS module, Arduino nano and a microphone to track their movements and communicate with their heads.
+                </p>
+            </div>
+
+            <div class="achievements-item">
+                <h3>Competed in YUKTHI-23</h3>
+                <p>YUKTHI-23 Participant | Nov 2023</p>
+                <p>Create a solution for the ground personnels on-duty.
+                    In this project, we use a GSM module, GPS module, Arduino nano and a microphone to track their movements and communicate with their heads.
+                    In this project we use a NLP for language processing which is gathered from the officers through microphone.
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>   
+        <section id="contact" class="section contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm" action="https://formspree.io/f/xeojyygb" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+               
+                <button class="button">
+                <span class="text">send message</span>
+                <span class="icon"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-icon="paper-plane" width="20px" aria-hidden="true"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z" fill="currentColor"></path></svg></span>
+                </button>
+            </form>
+            <div class="success-message" id="successMessage">Your message has been sent successfully!</div>
+        </section>    
+        <div class="contact-info">
+            <h3>Contact me</h3>
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/dhineshx._" target="_blank">
+                        <img src="instagram.png" alt="Instagram" /> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/7708842521" target="_blank">
+                        <img src="logo.png" alt="WhatsApp" /> WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:dhineshad235@gmail.com">
+                        <img src="gmail.png" alt="Email" /> Email
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+917708842521">
+                        <img src="phone-call.png" alt="Phone" /> Phone: +91 7708842521
+                    </a>
+                </li>
+            </ul>
+        </div>     
         <p>&copy; 2024 Dhinesh AD. All rights reserved.</p>
     </footer>
 
