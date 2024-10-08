@@ -483,43 +483,6 @@ a:-webkit-any-link {
     z-index: 2;
   }
   
-  /* change the width and height to 100% when you use it in your layout */
-  /*.button::after {
-    content: '';
-    position: absolute;
-    height: calc(100% - 2px);
-    width: calc(100% - 2px);
-    border: 1px solid #FFB400;
-    border-radius: 36px;
-    z-index: 2;
-  }
-  
-  .button::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #FFB400;
-    z-index: 1;
-    left: -2px;
-    transform: translateX(90%);
-    transition: all .3s ease-out;
-  }
-  
-  .icon {
-    display: inherit;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    width: 54px;
-    height: 54px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    background-color: #FFB400;
-    z-index: 2;
-  }  */
   .button {
     display: flex;
     align-items: center;
@@ -764,21 +727,31 @@ footer {
 
 /* General styles for the header */
 header {
+  font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   position:fixed;
   background-color: #2c3e50;
-  color: #ecf0f1;
-
-}
-.logo {
-  font-size: 24px;
-  font-weight: bold;
   color: white;
-}
 
+}
+/* Logo styles */
+.logo {
+  font-family: 'Montserrat', sans-serif;;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  position: relative; /* Ensures proper alignment with the hamburger */
+}
+@media (max-width: 768px) {
+  .logo {
+      position: absolute;
+      left: 50px; /* Adjust the spacing to sit next to the hamburger */
+      top: 2px; /* Align with the hamburger vertically */
+  }
+}
 /* Styling for the navigation links */
 .nav-links {
   display: flex;
@@ -792,7 +765,7 @@ header {
 
 .nav-links li a {
   color: white;
-  text-decoration: none;
+  text-decoration:none;
   padding: 8px 15px;
 }
 
@@ -821,28 +794,36 @@ header {
   .nav-links {
       display: none; /* Hide the links in mobile view */
       position: absolute;
-      top: 60px; /* Below the header */
-      right: 0;
-      background: gray;
+      top: 40px; /* Below the header */
+      left: 0;
+      background: #66B2B2;
       flex-direction: column;
       width: 100%;
       padding: 0;
       z-index: 10; /* Ensure the nav is above other content */
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+      transform: translateY(-100%);
+      opacity: 0;
   }
 
   .nav-links.show {
       display: flex; /* Show the links when toggled */
+      transform: translateY(0);
+      opacity: 1;
   }
 
   .nav-links li {
       width: 100%;
       text-align:center;
-      padding: 10px 0;
+      padding: 12px 0;
   }
 
   /* Show hamburger menu on smaller screens */
   .hamburger {
       display: flex; /* Show hamburger menu */
+      position: absolute;
+      left: 10px; /* Move to the left side */
+      top: 12px; /* Adjust top spacing if needed */
   }
 }
 
@@ -855,13 +836,21 @@ header {
   }
 
   .download-btn {
-      padding: 10px 15px;
-      margin-top: 20px;
-      font-size: 16px;
+      padding: 2px 6px; /* Reduced padding for smaller size */
+      margin-top:-82px;
+      right: 0;
+      font-size: 12px; /* Smaller font size */
       width: 100%;
-      max-width: 200px; /* Limit maximum width */
+      max-width: 120px; /* Limit maximum width, reduced */
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  .download-btn:hover {
+      background-color: #ffc003; /* Change background on hover */
+      color: black; /* Change text color on hover */
   }
 }
+
 /* From Uiverse.io by andrew-demchenk0 */ 
 .switch {
   font-size: 14px; /* Reduced font size */
